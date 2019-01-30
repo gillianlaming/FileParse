@@ -51,3 +51,8 @@ int parsingFunction(vector<string> & b, char * a)
 	}
 	return 0;
 }
+
+int messageFunct(const char * a) //takes a C style string or a reference to a const C++ style string as its only parameter
+{
+	//print to output stream
+}

@@ -13,3 +13,4 @@ to the program, and should show the correct format for command line arguments.
 
 Questions for TAs:
 - how does the enum stuff work
+- how do i return a enum label
