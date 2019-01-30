@@ -5,6 +5,8 @@
 #include "Header.h"
 #include <vector>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 int main(int argc, char * argv[])
@@ -18,7 +20,7 @@ int main(int argc, char * argv[])
 
 	vector<string> v;
 	//want to pass v and argv[1] to parsing function
-	parsingFunction(argv[1], v);
+	int e = parsingFunction(argv[1], v);
 
 	vector<int> z;
 	//test each string in v to see if it is only digits
@@ -28,10 +30,24 @@ int main(int argc, char * argv[])
 
 }
 
-int parsingFunction(string a, vector<string> b) { //this is temp. mostly a placeholder so i can create framework for code
-
+int parsingFunction(vector<string> & b, char * a)
+{ 
+	//second parameter is name of the file
+	ifstream ifs;
+	ifs.open(a);
+	if (ifs.is_open()) 
+	{
+		string line_1;
+		getline (ifs, line_1);
+		istringstream iss(line_1);
+		while (iss >> line_1) { //while there are still strings to be extracted
+			if (!line_1.empty()) { //exclude empty strings
+				b.push_back(line_1);
+			}
+		}
+	}
+	if (/*error*/) {
+		return /*nonzero*/;
+	}
+	return 0;
 }
-
-
-
-//hello
