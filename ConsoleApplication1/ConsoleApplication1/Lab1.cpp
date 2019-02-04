@@ -9,6 +9,8 @@
 #include <sstream>
 using namespace std;
 
+int parsingFunction(vector<string> & b, char * a);
+
 int main(int argc, char * argv[])
 {
 	
@@ -20,12 +22,12 @@ int main(int argc, char * argv[])
 
 	vector<string> v;
 	//want to pass v and argv[1] to parsing function
-	int e = parsingFunction(argv[1], v);
+	int e = parsingFunction(v, argv[1]);
 
 	vector<int> z;
 	//test each string in v to see if it is only digits
 	//use C++ library isdigit function ********
-
+		
     return 0;
 
 }
@@ -37,7 +39,7 @@ int parsingFunction(vector<string> & b, char * a)
 	ifs.open(a);
 	if (ifs.is_open()) 
 	{
-		string line_1;
+		string line_1; 
 		getline (ifs, line_1);
 		istringstream iss(line_1);
 		while (iss >> line_1) { //while there are still strings to be extracted
@@ -46,13 +48,16 @@ int parsingFunction(vector<string> & b, char * a)
 			}
 		}
 	}
-	if (/*error*/) {
-		return /*nonzero*/;
+	/*
+	if () {
+		//return nonzer;
 	}
+	*/
 	return 0;
 }
 
 int messageFunct(const char * a) //takes a C style string or a reference to a const C++ style string as its only parameter
 {
+	return results::success;
 	//print to output stream
 }
