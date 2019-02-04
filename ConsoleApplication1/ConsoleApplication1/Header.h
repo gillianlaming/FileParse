@@ -6,10 +6,10 @@
 //input file name which should be given at position 1 in argv, and the expected number of 
 //command line arguments including the program name, which is given by argc).
 
-enum struct inputs {programName, inputFile, commandLineArguments};
+enum inputs {programName, inputFile, commandLineArguments};
 
 //declare an enumeration for the different success and failure values your program can return 
 //i.e., 0 for success and different non-zero values for all the different kinds of
 //failures the program may encounter).
 
-enum struct results {success, failure}; //specify each failure
+enum results {success, commandLineFail, failure}; //specify each failure

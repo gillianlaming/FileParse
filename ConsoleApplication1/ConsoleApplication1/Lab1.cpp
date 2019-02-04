@@ -11,13 +11,14 @@ using namespace std;
 
 int parsingFunction(vector<string> & b, char * a);
 
+int messageFunct(const char * a);
+
 int main(int argc, char * argv[])
 {
 	
 	//first check to make sure only 1 argument is being passed thru
 	if (argc > 2) {
-		//badbadbad
-		//call the usage message function
+		return messageFunct(argv[0]);
 	}
 
 	vector<string> v;
@@ -34,7 +35,7 @@ int main(int argc, char * argv[])
 
 int parsingFunction(vector<string> & b, char * a)
 { 
-	//second parameter is name of the file
+	//param a is name of the file
 	ifstream ifs;
 	ifs.open(a);
 	if (ifs.is_open()) 
@@ -48,16 +49,15 @@ int parsingFunction(vector<string> & b, char * a)
 			}
 		}
 	}
-	/*
-	if () {
-		//return nonzer;
+	else {
+		return results::failure; //unable to open file failure?
 	}
-	*/
+	
 	return 0;
 }
 
 int messageFunct(const char * a) //takes a C style string or a reference to a const C++ style string as its only parameter
 {
-	return results::success;
-	//print to output stream
+	cout << "usage: lab 1 " << a << endl; //print usage message
+	return results::commandLineFail; //return failure number
 }
