@@ -2,6 +2,7 @@ Gillian Laming, Lab 1
 
 1. Errors encountered over in process:
 - 'parsingFunction': Lab1 identifier not found
+- no suitable conversion function from "std::string" to "int" exists	
 
 2. Test cases ran (i.e., what the command lines were), and summary 
 of what prgram did and whether that was correct behavior.

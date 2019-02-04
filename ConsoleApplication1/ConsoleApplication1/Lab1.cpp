@@ -24,11 +24,27 @@ int main(int argc, char * argv[])
 	vector<string> v;
 	//want to pass v and argv[1] to parsing function
 	int e = parsingFunction(v, argv[1]);
+	if (e != 0) { //if the function wasn't successful
+		return e;
+	}
 
 	vector<int> z;
-	//test each string in v to see if it is only digits
-	//use C++ library isdigit function ********
-		
+	for (size_t s = 0; s < v.size(); ++s) { //test each string in v to see if it is only digits
+		bool a = true;
+		for (char& c : v[s]) { //iterate char by char thru string
+			if (isdigit(c) == 0) { //isdigit returns 0 when the char is not a digit
+				a = false;
+			}
+		}
+		if (a) {
+			cin >> v[s]; //(1) wrap the string in an input string stream, 
+			//(2) use the stream's extraction (>>) operator to convert it to an integer, and 
+			z.push_back(v[s]); //(3) push that integer back into the vector of integers.
+		}
+		else {
+			cout << v[s] << endl; //print to output stream if it doesn't contain all digits
+		}
+	}
     return 0;
 
 }
