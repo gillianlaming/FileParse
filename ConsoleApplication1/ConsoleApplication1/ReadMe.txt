@@ -31,4 +31,11 @@ strings
 
 I also ran echo %errorlevel%, which return 0 which indicated success. 
 
+Extra Credit: Attempting to create directory /home/warehouse/gdlaming/perl5
+@gdlaming@shell ~
 
+make: Nothing to be done fro "Makefile"
+*** No rule to make target 'Lab1.cpp', needed by 'Lab1.exe'. Stop.
+
+command prompt: ./Lab1.exe input_file.txt
+result: -bash: ./Lab1.exe: cannot execute binary file
