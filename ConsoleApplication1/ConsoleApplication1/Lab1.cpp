@@ -45,6 +45,10 @@ int main(int argc, char * argv[])
 		else {
 			cout << v[s] << endl; //print to output stream if it doesn't contain all digits
 		}
+		
+	}
+	for (size_t s = 0; s < z.size(); ++s) {
+		cout << z[s] << endl;
 	}
     return 0;
 
@@ -58,13 +62,14 @@ int parsingFunction(vector<string> & b, char * a)
 	ifstream ifs(a);
 	if (ifs.is_open()) 
 	{
-		
-		string line_1; 
-		getline (ifs, line_1);
-		istringstream iss(line_1);
-		while (iss >> line_1) { //while there are still strings to be extracted
-			if (!line_1.empty()) { //exclude empty strings
-				b.push_back(line_1);
+		while (!ifs.eof()) {
+			string line_1;
+			getline(ifs, line_1);
+			istringstream iss(line_1);
+			while (iss >> line_1) { //while there are still strings to be extracted
+				if (!line_1.empty()) { //exclude empty strings
+					b.push_back(line_1);
+				}
 			}
 		}
 	}
