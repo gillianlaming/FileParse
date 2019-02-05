@@ -39,3 +39,7 @@ make: Nothing to be done fro "Makefile"
 
 command prompt: ./Lab1.exe input_file.txt
 result: -bash: ./Lab1.exe: cannot execute binary file
+
+make error: 
+range-based afora loops are not allowed in C++98 mode 
+*** [Lab1.exe] Error 1
