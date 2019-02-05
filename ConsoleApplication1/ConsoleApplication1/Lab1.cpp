@@ -17,14 +17,14 @@ int main(int argc, char * argv[])
 {
 	
 	//first check to make sure only 1 argument is being passed thru
-	if (argc > 2) {
-		return messageFunct(argv[0]);
+	if (argc > commandLineArguments) {
+		return messageFunct(argv[programName]);
 	}
 
 	vector<string> v;
 	//want to pass v and argv[1] to parsing function
-	int e = parsingFunction(v, argv[1]);
-	if (e != 0) { //if the function wasn't successful
+	int e = parsingFunction(v, argv[inputFile]);
+	if (e != success) { //if the function wasn't successful
 		return e;
 	}
 
@@ -37,9 +37,10 @@ int main(int argc, char * argv[])
 			}
 		}
 		if (a) {
-			cin >> v[s]; //(1) wrap the string in an input string stream, 
-			//(2) use the stream's extraction (>>) operator to convert it to an integer, and 
-			z.push_back(v[s]); //(3) push that integer back into the vector of integers.
+			int digitString;
+			istringstream iss (v[s]);//(1) wrap the string in an input string stream, 
+			iss >> digitString; //(2) use the stream's extraction (>>) operator to convert it to an integer, and 
+			z.push_back(digitString); //(3) push that integer back into the vector of integers.
 		}
 		else {
 			cout << v[s] << endl; //print to output stream if it doesn't contain all digits
@@ -52,10 +53,12 @@ int main(int argc, char * argv[])
 int parsingFunction(vector<string> & b, char * a)
 { 
 	//param a is name of the file
-	ifstream ifs;
-	ifs.open(a);
+	//ifstream ifs;
+	//ifs.open(a);
+	ifstream ifs(a);
 	if (ifs.is_open()) 
 	{
+		
 		string line_1; 
 		getline (ifs, line_1);
 		istringstream iss(line_1);
@@ -66,14 +69,14 @@ int parsingFunction(vector<string> & b, char * a)
 		}
 	}
 	else {
-		return results::failure; //unable to open file failure?
+		return failure; //unable to open file failure?
 	}
 	
-	return 0;
+	return success;
 }
 
 int messageFunct(const char * a) //takes a C style string or a reference to a const C++ style string as its only parameter
 {
-	cout << "usage: lab 1 " << a << endl; //print usage message
-	return results::commandLineFail; //return failure number
+	cout << "usage: " << a << " input_file.txt" << endl; //print usage message
+	return commandLineFail; //return failure number
 }
