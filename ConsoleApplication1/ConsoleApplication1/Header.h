@@ -12,4 +12,4 @@ enum inputs {programName, inputFile, commandLineArguments};
 //i.e., 0 for success and different non-zero values for all the different kinds of
 //failures the program may encounter).
 
-enum results {success, commandLineFail, failure}; //specify each failure
+enum results {success, commandLineFail, unableToOpenFileFailure}; //specify each failure

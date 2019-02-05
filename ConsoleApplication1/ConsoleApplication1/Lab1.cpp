@@ -1,5 +1,3 @@
-// ConsoleApplication1.cpp : Defines the entry point for the console application.
-//
 
 #include "stdafx.h"
 #include "Header.h"
@@ -16,13 +14,13 @@ int messageFunct(const char * a);
 int main(int argc, char * argv[])
 {
 	
-	//first check to make sure only 1 argument is being passed thru
+	//first check to make sure correct number of arguments are being passed through
 	if (argc > commandLineArguments) {
 		return messageFunct(argv[programName]);
 	}
 
 	vector<string> v;
-	//want to pass v and argv[1] to parsing function
+	//want to pass v and filename to parsing function
 	int e = parsingFunction(v, argv[inputFile]);
 	if (e != success) { //if the function wasn't successful
 		return e;
@@ -38,9 +36,9 @@ int main(int argc, char * argv[])
 		}
 		if (a) {
 			int digitString;
-			istringstream iss (v[s]);//(1) wrap the string in an input string stream, 
-			iss >> digitString; //(2) use the stream's extraction (>>) operator to convert it to an integer, and 
-			z.push_back(digitString); //(3) push that integer back into the vector of integers.
+			istringstream iss (v[s]);//wrap the string in an input string stream, 
+			iss >> digitString; //use the stream's extraction (>>) operator to convert it to an integer, and 
+			z.push_back(digitString); //push that integer back into the vector of integers.
 		}
 		else {
 			cout << v[s] << endl; //print to output stream if it doesn't contain all digits
@@ -48,21 +46,19 @@ int main(int argc, char * argv[])
 		
 	}
 	for (size_t s = 0; s < z.size(); ++s) {
-		cout << z[s] << endl;
+		cout << z[s] << endl; //now print off all the strings that we converted to integers
 	}
-    return 0;
+    return success;
 
 }
 
 int parsingFunction(vector<string> & b, char * a)
 { 
 	//param a is name of the file
-	//ifstream ifs;
-	//ifs.open(a);
 	ifstream ifs(a);
 	if (ifs.is_open()) 
 	{
-		while (!ifs.eof()) {
+		while (!ifs.eof()) { //while it's not the end of the file
 			string line_1;
 			getline(ifs, line_1);
 			istringstream iss(line_1);
@@ -74,7 +70,7 @@ int parsingFunction(vector<string> & b, char * a)
 		}
 	}
 	else {
-		return failure; //unable to open file failure?
+		return unableToOpenFileFailure; //unable to open file failure
 	}
 	
 	return success;

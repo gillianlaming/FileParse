@@ -2,16 +2,33 @@ Gillian Laming, Lab 1
 
 1. Errors encountered over in process:
 - 'parsingFunction': Lab1 identifier not found
-- no suitable conversion function from "std::string" to "int" exists	
+- no suitable conversion function from "std::string" to "int" exists, mismatched type error	
 
 2. Test cases ran (i.e., what the command lines were), and summary 
 of what prgram did and whether that was correct behavior.
+- Command Lines run:
+Lab1.exe input_file.txt
+output from that command line was:
+these
+all
+are
+strings
+7string
+str4ing
+string2
+more
+strings
+0
+1
+2
+3
+5
+7
+11
+13
+17
+19
 
-Things to note in code:
--  Every program should have a helpful "usage" message. 
-It should be printed out if erroneous command line arguments (or too many or too few) are provided 
-to the program, and should show the correct format for command line arguments.
+I also ran echo %errorlevel%, which return 0 which indicated success. 
 
-Questions for TAs:
-- how does the enum stuff work
-- how do i return a enum label
+
