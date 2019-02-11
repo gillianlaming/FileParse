@@ -1,10 +1,18 @@
-Grader's name:
-grader's initials(used to mark comments in your code):
-Grader's email:
+Grader's name: Luxiao Zheng
+grader's initials(used to mark comments in your code):LZ
+Grader's email:luxiaozheng@wustl.edu
 
-Grade: /100
+Grade: 43/100
 
 Deductions: 
+-1 Please put funtion declaration in your header file(not cpp file); Please do not name your variables a,b,z,etc. They should ha
+ve their meanings and names.
+
+-5 When running with no arguments, program crashes!
+-2 Testing with bad file names, program does not give a usage message
+
++2 extra credit
+
 The grader may leave comments throughout your graded code files. 
 Please search for the grader's initials above within you lab to find
 additional comments and feedback.

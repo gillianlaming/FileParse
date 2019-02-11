@@ -15,7 +15,7 @@ int main(int argc, char * argv[])
 {
 	
 	//first check to make sure correct number of arguments are being passed through
-	if (argc > commandLineArguments) {
+	if (argc != commandLineArguments) { //LZ: Changed into !=
 		return messageFunct(argv[programName]);
 	}
 
