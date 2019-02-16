@@ -2,7 +2,7 @@ Grader's name: Luxiao Zheng
 grader's initials(used to mark comments in your code):LZ
 Grader's email:luxiaozheng@wustl.edu
 
-Grade: 43/100
+Grade: 94/100
 
 Deductions: 
 -1 Please put funtion declaration in your header file(not cpp file); Please do not name your variables a,b,z,etc. They should ha
